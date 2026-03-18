@@ -45,4 +45,7 @@ export default defineConfig({
   server: {
     historyApiFallback: true,
   },
+  build: {
+    target: 'es2015',
+  },
 })
