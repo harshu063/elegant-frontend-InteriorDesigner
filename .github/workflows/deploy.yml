@@ -40,7 +40,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: 'elegant-frontend-interiordesigner'
+          projectName: 'jay-interior'
           directory: dist
           branch: main
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
