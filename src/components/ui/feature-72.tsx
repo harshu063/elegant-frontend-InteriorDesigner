@@ -1,5 +1,7 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 interface Feature {
   id: string;
@@ -71,7 +73,7 @@ export const Feature72 = ({
           <h2 className="text-3xl md:text-4xl font-semibold text-[#2C3E50] mb-4">{heading}</h2>
           <p className="text-base text-[#2C3E50]/70 leading-relaxed mb-6">{description}</p>
           <Link
-            to={linkUrl}
+            href={linkUrl}
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C9A96E] hover:text-[#2C3E50] transition-colors group"
           >
             {linkText}

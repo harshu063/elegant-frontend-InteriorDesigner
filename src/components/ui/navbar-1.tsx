@@ -2,7 +2,8 @@
 
 import * as React from "react"
 import { useState, useEffect, useRef } from "react"
-import { Link, useLocation, useNavigate } from "react-router-dom"
+import Link from "next/link"
+import { usePathname, useRouter } from "next/navigation"
 import { motion, AnimatePresence } from "motion/react"
 import { Menu, X, ChevronDown, ArrowRight, Layers, Home, Sofa, Lightbulb, Grid3X3, Building2 } from "lucide-react"
 
@@ -57,15 +58,15 @@ const Navbar1 = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
-  const location = useLocation()
-  const navigate = useNavigate()
+  const pathname = usePathname()
+  const router = useRouter()
   const navRef = useRef<HTMLDivElement>(null)
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     setIsOpen(false)
     setActiveDropdown(null)
-  }, [location.pathname])
+  }, [pathname])
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
@@ -86,7 +87,7 @@ const Navbar1 = () => {
     timeoutRef.current = setTimeout(() => setActiveDropdown(null), 150)
   }
 
-  const isActive = (path: string) => location.pathname === path
+  const isActive = (path: string) => pathname === path
 
   return (
     <>
@@ -94,7 +95,7 @@ const Navbar1 = () => {
       <div className="flex items-center justify-between h-16 px-4 md:px-8 max-w-7xl mx-auto relative z-10">
 
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2.5 shrink-0">
+        <Link href="/" className="flex items-center gap-2.5 shrink-0">
           <motion.div
             whileHover={{ rotate: 10, scale: 1.05 }}
             transition={{ duration: 0.3 }}
@@ -117,7 +118,7 @@ const Navbar1 = () => {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-1">
           <Link
-            to="/"
+            href="/"
             className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
               isActive("/") ? "text-[#C9A96E] bg-[#C9A96E]/10" : "text-[#2C3E50]/75 hover:text-[#2C3E50] hover:bg-[#2C3E50]/[0.06]"
             }`}
@@ -148,7 +149,7 @@ const Navbar1 = () => {
                 {servicesDropdown.map((item) => (
                   <Link
                     key={item.label}
-                    to={item.href}
+                    href={item.href}
                     className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm text-[#2C3E50]/75 hover:bg-[#C9A96E]/10 hover:text-[#C9A96E] transition-colors group"
                   >
                     <item.icon size={14} className="text-[#C9A96E] shrink-0" />
@@ -158,7 +159,7 @@ const Navbar1 = () => {
               </div>
               <div className="mt-2 pt-2 border-t border-[#2C3E50]/10">
                 <Link
-                  to="/services"
+                  href="/services"
                   className="flex items-center justify-center gap-1.5 text-xs font-semibold text-[#C9A96E] hover:text-[#2C3E50] transition-colors py-1"
                 >
                   View all services <ArrowRight size={12} />
@@ -190,7 +191,7 @@ const Navbar1 = () => {
                 {projectsDropdown.map((item) => (
                   <Link
                     key={item.label}
-                    to={item.href}
+                    href={item.href}
                     className="flex items-center justify-between px-3 py-2.5 rounded-xl text-sm text-[#2C3E50]/75 hover:bg-[#C9A96E]/10 hover:text-[#C9A96E] transition-colors group"
                   >
                     <span className="font-medium">{item.label}</span>
@@ -200,7 +201,7 @@ const Navbar1 = () => {
               </div>
               <div className="mt-2 pt-2 border-t border-[#2C3E50]/10">
                 <Link
-                  to="/projects"
+                  href="/projects"
                   className="flex items-center justify-center gap-1.5 text-xs font-semibold text-[#C9A96E] hover:text-[#2C3E50] transition-colors py-1"
                 >
                   View all projects <ArrowRight size={12} />
@@ -216,7 +217,7 @@ const Navbar1 = () => {
               if (el) {
                 el.scrollIntoView({ behavior: "smooth" })
               } else {
-                navigate("/")
+                router.push("/")
                 setTimeout(() => document.getElementById("about-section")?.scrollIntoView({ behavior: "smooth" }), 150)
               }
             }}
@@ -227,7 +228,7 @@ const Navbar1 = () => {
 
           {/* Contact */}
           <Link
-            to="/contact"
+            href="/contact"
             className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
               isActive("/contact") ? "text-[#C9A96E] bg-[#C9A96E]/10" : "text-[#2C3E50]/75 hover:text-[#2C3E50] hover:bg-[#2C3E50]/[0.06]"
             }`}
@@ -239,7 +240,7 @@ const Navbar1 = () => {
         {/* Desktop CTA */}
         <motion.div className="hidden md:block" whileHover={{ scale: 1.05 }}>
           <Link
-            to="/contact"
+            href="/contact"
             className="inline-flex items-center gap-1.5 px-5 py-2 text-sm font-semibold text-white bg-[#C9A96E] rounded-full hover:bg-[#2C3E50] transition-colors shadow-sm"
           >
             Free Consultation
@@ -290,7 +291,7 @@ const Navbar1 = () => {
             </div>
 
             <div className="px-6 py-6 space-y-1">
-              <Link to="/" className="flex items-center px-4 py-3 text-base font-medium text-[#2C3E50] rounded-xl hover:bg-[#2C3E50]/[0.04]" onClick={() => setIsOpen(false)}>Home</Link>
+              <Link href="/" className="flex items-center px-4 py-3 text-base font-medium text-[#2C3E50] rounded-xl hover:bg-[#2C3E50]/[0.04]" onClick={() => setIsOpen(false)}>Home</Link>
 
               {/* Mobile Services accordion */}
               <div>
@@ -313,7 +314,7 @@ const Navbar1 = () => {
                         {servicesDropdown.map((item) => (
                           <Link
                             key={item.label}
-                            to={item.href}
+                            href={item.href}
                             className="flex items-center gap-2 px-4 py-2.5 text-sm text-[#2C3E50]/75 rounded-lg hover:bg-[#C9A96E]/10 hover:text-[#C9A96E]"
                             onClick={() => setIsOpen(false)}
                           >
@@ -348,7 +349,7 @@ const Navbar1 = () => {
                         {projectsDropdown.map((item) => (
                           <Link
                             key={item.label}
-                            to={item.href}
+                            href={item.href}
                             className="flex items-center px-4 py-2.5 text-sm text-[#2C3E50]/75 rounded-lg hover:bg-[#C9A96E]/10 hover:text-[#C9A96E]"
                             onClick={() => setIsOpen(false)}
                           >
@@ -369,16 +370,16 @@ const Navbar1 = () => {
                   if (el) {
                     el.scrollIntoView({ behavior: "smooth" })
                   } else {
-                    navigate("/")
+                    router.push("/")
                     setTimeout(() => document.getElementById("about-section")?.scrollIntoView({ behavior: "smooth" }), 150)
                   }
                 }}
               >About</button>
-              <Link to="/contact" className="flex items-center px-4 py-3 text-base font-medium text-[#2C3E50] rounded-xl hover:bg-[#2C3E50]/[0.04]" onClick={() => setIsOpen(false)}>Contact</Link>
+              <Link href="/contact" className="flex items-center px-4 py-3 text-base font-medium text-[#2C3E50] rounded-xl hover:bg-[#2C3E50]/[0.04]" onClick={() => setIsOpen(false)}>Contact</Link>
 
               <div className="pt-4">
                 <Link
-                  to="/contact"
+                  href="/contact"
                   className="flex items-center justify-center w-full py-3.5 text-base font-semibold text-white bg-[#C9A96E] rounded-2xl hover:bg-[#2C3E50] transition-colors"
                   onClick={() => setIsOpen(false)}
                 >

@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState, useEffect, useRef } from "react"
-import { Link } from "react-router-dom"
+import Link from "next/link"
 import {
   Pen,
   PaintBucket,
@@ -312,7 +312,7 @@ export default function AboutUsSection() {
           </div>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
-              to="/contact"
+              href="/contact"
               className="bg-[#C9A96E] hover:bg-[#C9A96E]/90 text-white px-6 py-3 rounded-lg inline-flex items-center gap-2 font-medium transition-colors"
             >
               Book a Free Consultation <ArrowRight className="w-4 h-4" />

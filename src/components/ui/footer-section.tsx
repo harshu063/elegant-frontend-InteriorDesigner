@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Link } from "react-router-dom"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import {
   Tooltip,
@@ -41,7 +41,7 @@ function Footerdemo() {
             <h3 className="mb-2 text-base font-semibold">Start Your Project</h3>
             <p className="text-sm text-muted-foreground mb-4 leading-relaxed">Book a free site visit — we'll assess your space and send a detailed proposal within 48 hours.</p>
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center gap-2 bg-[#C9A96E] hover:bg-[#2C3E50] text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-colors"
             >
               Get a Free Quote <Send className="h-3.5 w-3.5" />
@@ -53,7 +53,7 @@ function Footerdemo() {
           <div>
             <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
             <nav className="space-y-2 text-sm">
-              <Link to="/" className="block transition-colors hover:text-[#C9A96E]">Home</Link>
+              <Link href="/" className="block transition-colors hover:text-[#C9A96E]">Home</Link>
               <button
                 onClick={() => {
                   const el = document.getElementById("about-section");
@@ -66,9 +66,9 @@ function Footerdemo() {
                 }}
                 className="block text-left w-full transition-colors hover:text-[#C9A96E]"
               >About Us</button>
-              <Link to="/services" className="block transition-colors hover:text-[#C9A96E]">Services</Link>
-              <Link to="/projects" className="block transition-colors hover:text-[#C9A96E]">Projects</Link>
-              <Link to="/contact" className="block transition-colors hover:text-[#C9A96E]">Contact Us</Link>
+              <Link href="/services" className="block transition-colors hover:text-[#C9A96E]">Services</Link>
+              <Link href="/projects" className="block transition-colors hover:text-[#C9A96E]">Projects</Link>
+              <Link href="/contact" className="block transition-colors hover:text-[#C9A96E]">Contact Us</Link>
             </nav>
           </div>
 
@@ -144,7 +144,7 @@ function Footerdemo() {
           <nav className="flex gap-4 text-sm">
             <a href="#" className="transition-colors hover:text-[#C9A96E]">Privacy Policy</a>
             <a href="#" className="transition-colors hover:text-[#C9A96E]">Terms of Service</a>
-            <Link to="/contact" className="transition-colors hover:text-[#C9A96E]">Get a Quote</Link>
+            <Link href="/contact" className="transition-colors hover:text-[#C9A96E]">Get a Quote</Link>
           </nav>
         </div>
       </div>
