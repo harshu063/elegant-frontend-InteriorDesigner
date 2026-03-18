@@ -4,24 +4,24 @@ import * as React from "react"
 import { useState, useEffect, useRef } from "react"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { motion, AnimatePresence } from "motion/react"
-import { Menu, X, ChevronDown, ArrowRight, Sofa, Building2, Ruler, PaintBucket, Pen, Home } from "lucide-react"
+import { Menu, X, ChevronDown, ArrowRight, Layers, Home, Sofa, Lightbulb, Grid3X3, Building2 } from "lucide-react"
 
 // --- Dropdown data ---
 const servicesDropdown = [
-  { icon: Sofa, label: "Living Room Furniture", href: "/services" },
-  { icon: Home, label: "Bedroom Sets", href: "/services" },
-  { icon: Ruler, label: "Custom Furniture", href: "/services" },
-  { icon: PaintBucket, label: "Wooden Décor", href: "/services" },
-  { icon: Building2, label: "Office Furniture", href: "/services" },
-  { icon: Pen, label: "Kitchen Cabinets", href: "/services" },
+  { icon: Home,      label: "Residential Interiors",    href: "/services" },
+  { icon: Building2, label: "Commercial Spaces",        href: "/services" },
+  { icon: Grid3X3,   label: "Modular Kitchen & Wardrobe", href: "/services" },
+  { icon: Lightbulb, label: "False Ceiling & Lighting", href: "/services" },
+  { icon: Sofa,      label: "Custom Furniture",         href: "/services" },
+  { icon: Layers,    label: "Turnkey Projects",         href: "/services" },
 ]
 
 const projectsDropdown = [
-  { label: "Residential Projects", href: "/projects" },
-  { label: "Commercial Projects", href: "/projects" },
-  { label: "Hospitality Projects", href: "/projects" },
-  { label: "Office Fitouts", href: "/projects" },
-  { label: "Heritage Restorations", href: "/projects" },
+  { label: "Residential Projects",   href: "/projects" },
+  { label: "Commercial Interiors",   href: "/projects" },
+  { label: "Hospitality Spaces",     href: "/projects" },
+  { label: "Office Fit-Outs",        href: "/projects" },
+  { label: "Before & After",         href: "/projects" },
 ]
 
 // --- Dropdown panel ---
@@ -40,11 +40,11 @@ function DropdownPanel({
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 8, scale: 0.97 }}
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
-          className="absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 w-72 bg-white rounded-2xl shadow-xl border border-[#202e44]/10 p-3 z-50"
+          className="absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 w-72 bg-white rounded-2xl shadow-xl border border-[#2C3E50]/10 p-3 z-50"
         >
           {/* Triangle pointer */}
           <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-2 overflow-hidden">
-            <div className="w-3 h-3 bg-white border-l border-t border-[#202e44]/10 rotate-45 mx-auto mt-1" />
+            <div className="w-3 h-3 bg-white border-l border-t border-[#2C3E50]/10 rotate-45 mx-auto mt-1" />
           </div>
           {children}
         </motion.div>
@@ -62,13 +62,11 @@ const Navbar1 = () => {
   const navRef = useRef<HTMLDivElement>(null)
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  // Close dropdown when navigating
   useEffect(() => {
     setIsOpen(false)
     setActiveDropdown(null)
   }, [location.pathname])
 
-  // Click outside to close
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(e.target as Node)) {
@@ -92,7 +90,7 @@ const Navbar1 = () => {
 
   return (
     <>
-    <div className="w-full fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#202e44]/10 shadow-sm" ref={navRef}>
+    <div className="w-full fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#2C3E50]/10 shadow-sm" ref={navRef}>
       <div className="flex items-center justify-between h-16 px-4 md:px-8 max-w-7xl mx-auto relative z-10">
 
         {/* Logo */}
@@ -100,29 +98,28 @@ const Navbar1 = () => {
           <motion.div
             whileHover={{ rotate: 10, scale: 1.05 }}
             transition={{ duration: 0.3 }}
-            className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#88734C] to-[#202e44] flex items-center justify-center shadow-sm"
+            className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#C9A96E] to-[#2C3E50] flex items-center justify-center shadow-sm"
           >
-            <Sofa className="w-5 h-5 text-white" />
+            <Layers className="w-5 h-5 text-white" />
           </motion.div>
           <div>
-            <p className="text-[13px] font-bold text-[#202e44] leading-tight">Maa Ashapura</p>
-            <p className="text-[10px] text-[#88734C] font-medium tracking-wider uppercase leading-tight">Furniture</p>
+            <p className="text-[14px] font-bold text-[#2C3E50] leading-tight tracking-wide">Jay Interior</p>
+            <p className="text-[10px] text-[#C9A96E] font-medium tracking-widest uppercase leading-tight">Design Studio</p>
           </div>
         </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-1">
-          {/* Home */}
           <Link
             to="/"
             className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
-              isActive("/") ? "text-[#88734C] bg-[#88734C]/10" : "text-[#202e44]/75 hover:text-[#202e44] hover:bg-[#202e44]/[0.06]"
+              isActive("/") ? "text-[#C9A96E] bg-[#C9A96E]/10" : "text-[#2C3E50]/75 hover:text-[#2C3E50] hover:bg-[#2C3E50]/[0.06]"
             }`}
           >
             Home
           </Link>
 
-          {/* Services with dropdown */}
+          {/* Services dropdown */}
           <div
             className="relative"
             onMouseEnter={() => handleMouseEnter("services")}
@@ -130,7 +127,7 @@ const Navbar1 = () => {
           >
             <button
               className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
-                isActive("/services") ? "text-[#88734C] bg-[#88734C]/10" : "text-[#202e44]/75 hover:text-[#202e44] hover:bg-[#202e44]/[0.06]"
+                isActive("/services") ? "text-[#C9A96E] bg-[#C9A96E]/10" : "text-[#2C3E50]/75 hover:text-[#2C3E50] hover:bg-[#2C3E50]/[0.06]"
               }`}
             >
               Services
@@ -146,17 +143,17 @@ const Navbar1 = () => {
                   <Link
                     key={item.label}
                     to={item.href}
-                    className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm text-[#202e44]/75 hover:bg-[#88734C]/10 hover:text-[#88734C] transition-colors group"
+                    className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm text-[#2C3E50]/75 hover:bg-[#C9A96E]/10 hover:text-[#C9A96E] transition-colors group"
                   >
-                    <item.icon size={14} className="text-[#88734C] shrink-0" />
+                    <item.icon size={14} className="text-[#C9A96E] shrink-0" />
                     <span className="text-xs font-medium">{item.label}</span>
                   </Link>
                 ))}
               </div>
-              <div className="mt-2 pt-2 border-t border-[#202e44]/10">
+              <div className="mt-2 pt-2 border-t border-[#2C3E50]/10">
                 <Link
                   to="/services"
-                  className="flex items-center justify-center gap-1.5 text-xs font-semibold text-[#88734C] hover:text-[#202e44] transition-colors py-1"
+                  className="flex items-center justify-center gap-1.5 text-xs font-semibold text-[#C9A96E] hover:text-[#2C3E50] transition-colors py-1"
                 >
                   View all services <ArrowRight size={12} />
                 </Link>
@@ -164,7 +161,7 @@ const Navbar1 = () => {
             </DropdownPanel>
           </div>
 
-          {/* Projects with dropdown */}
+          {/* Projects dropdown */}
           <div
             className="relative"
             onMouseEnter={() => handleMouseEnter("projects")}
@@ -172,7 +169,7 @@ const Navbar1 = () => {
           >
             <button
               className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
-                isActive("/projects") ? "text-[#88734C] bg-[#88734C]/10" : "text-[#202e44]/75 hover:text-[#202e44] hover:bg-[#202e44]/[0.06]"
+                isActive("/projects") ? "text-[#C9A96E] bg-[#C9A96E]/10" : "text-[#2C3E50]/75 hover:text-[#2C3E50] hover:bg-[#2C3E50]/[0.06]"
               }`}
             >
               Projects
@@ -188,17 +185,17 @@ const Navbar1 = () => {
                   <Link
                     key={item.label}
                     to={item.href}
-                    className="flex items-center justify-between px-3 py-2.5 rounded-xl text-sm text-[#202e44]/75 hover:bg-[#88734C]/10 hover:text-[#88734C] transition-colors group"
+                    className="flex items-center justify-between px-3 py-2.5 rounded-xl text-sm text-[#2C3E50]/75 hover:bg-[#C9A96E]/10 hover:text-[#C9A96E] transition-colors group"
                   >
                     <span className="font-medium">{item.label}</span>
-                    <ArrowRight size={12} className="text-[#202e44]/25 group-hover:text-[#88734C] transition-colors" />
+                    <ArrowRight size={12} className="text-[#2C3E50]/25 group-hover:text-[#C9A96E] transition-colors" />
                   </Link>
                 ))}
               </div>
-              <div className="mt-2 pt-2 border-t border-[#202e44]/10">
+              <div className="mt-2 pt-2 border-t border-[#2C3E50]/10">
                 <Link
                   to="/projects"
-                  className="flex items-center justify-center gap-1.5 text-xs font-semibold text-[#88734C] hover:text-[#202e44] transition-colors py-1"
+                  className="flex items-center justify-center gap-1.5 text-xs font-semibold text-[#C9A96E] hover:text-[#2C3E50] transition-colors py-1"
                 >
                   View all projects <ArrowRight size={12} />
                 </Link>
@@ -209,15 +206,15 @@ const Navbar1 = () => {
           {/* About */}
           <button
             onClick={() => {
-              const el = document.getElementById("about-section");
+              const el = document.getElementById("about-section")
               if (el) {
-                el.scrollIntoView({ behavior: "smooth" });
+                el.scrollIntoView({ behavior: "smooth" })
               } else {
-                navigate("/");
-                setTimeout(() => document.getElementById("about-section")?.scrollIntoView({ behavior: "smooth" }), 150);
+                navigate("/")
+                setTimeout(() => document.getElementById("about-section")?.scrollIntoView({ behavior: "smooth" }), 150)
               }
             }}
-            className="px-3 py-2 text-sm font-medium text-[#202e44]/75 hover:text-[#202e44] hover:bg-[#202e44]/[0.06] rounded-lg transition-colors"
+            className="px-3 py-2 text-sm font-medium text-[#2C3E50]/75 hover:text-[#2C3E50] hover:bg-[#2C3E50]/[0.06] rounded-lg transition-colors"
           >
             About
           </button>
@@ -226,7 +223,7 @@ const Navbar1 = () => {
           <Link
             to="/contact"
             className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
-              isActive("/contact") ? "text-[#88734C] bg-[#88734C]/10" : "text-[#202e44]/75 hover:text-[#202e44] hover:bg-[#202e44]/[0.06]"
+              isActive("/contact") ? "text-[#C9A96E] bg-[#C9A96E]/10" : "text-[#2C3E50]/75 hover:text-[#2C3E50] hover:bg-[#2C3E50]/[0.06]"
             }`}
           >
             Contact
@@ -237,25 +234,24 @@ const Navbar1 = () => {
         <motion.div className="hidden md:block" whileHover={{ scale: 1.05 }}>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-1.5 px-5 py-2 text-sm font-semibold text-white bg-[#88734C] rounded-full hover:bg-[#202e44] transition-colors shadow-sm"
+            className="inline-flex items-center gap-1.5 px-5 py-2 text-sm font-semibold text-white bg-[#C9A96E] rounded-full hover:bg-[#2C3E50] transition-colors shadow-sm"
           >
-            Get Quote
+            Free Consultation
           </Link>
         </motion.div>
 
         {/* Mobile Menu Toggle */}
         <motion.button
-          className="md:hidden flex items-center p-2 rounded-lg hover:bg-[#202e44]/[0.06]"
+          className="md:hidden flex items-center p-2 rounded-lg hover:bg-[#2C3E50]/[0.06]"
           onClick={() => setIsOpen(!isOpen)}
           whileTap={{ scale: 0.9 }}
         >
-          {isOpen ? <X className="h-6 w-6 text-[#202e44]" /> : <Menu className="h-6 w-6 text-[#202e44]" />}
+          {isOpen ? <X className="h-6 w-6 text-[#2C3E50]" /> : <Menu className="h-6 w-6 text-[#2C3E50]" />}
         </motion.button>
       </div>
-
     </div>
 
-      {/* Mobile Menu — rendered outside the backdrop-blur wrapper to avoid containing-block issues */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -266,28 +262,28 @@ const Navbar1 = () => {
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
           >
             {/* Mobile header */}
-            <div className="flex items-center justify-between px-6 py-5 border-b border-[#202e44]/10">
+            <div className="flex items-center justify-between px-6 py-5 border-b border-[#2C3E50]/10">
               <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#88734C] to-[#202e44] flex items-center justify-center">
-                  <Sofa className="w-5 h-5 text-white" />
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#C9A96E] to-[#2C3E50] flex items-center justify-center">
+                  <Layers className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <p className="text-[13px] font-bold text-[#202e44]">Maa Ashapura</p>
-                  <p className="text-[10px] text-[#88734C] font-medium tracking-wider uppercase">Furniture</p>
+                  <p className="text-[14px] font-bold text-[#2C3E50] tracking-wide">Jay Interior</p>
+                  <p className="text-[10px] text-[#C9A96E] font-medium tracking-widest uppercase">Design Studio</p>
                 </div>
               </div>
-              <button onClick={() => setIsOpen(false)} className="p-2 rounded-lg hover:bg-[#202e44]/[0.06]">
-                <X className="h-5 w-5 text-[#202e44]/75" />
+              <button onClick={() => setIsOpen(false)} className="p-2 rounded-lg hover:bg-[#2C3E50]/[0.06]">
+                <X className="h-5 w-5 text-[#2C3E50]/75" />
               </button>
             </div>
 
             <div className="px-6 py-6 space-y-1">
-              <Link to="/" className="flex items-center px-4 py-3 text-base font-medium text-[#202e44] rounded-xl hover:bg-[#202e44]/[0.04]" onClick={() => setIsOpen(false)}>Home</Link>
+              <Link to="/" className="flex items-center px-4 py-3 text-base font-medium text-[#2C3E50] rounded-xl hover:bg-[#2C3E50]/[0.04]" onClick={() => setIsOpen(false)}>Home</Link>
 
               {/* Mobile Services accordion */}
               <div>
                 <button
-                  className="flex items-center justify-between w-full px-4 py-3 text-base font-medium text-[#202e44] rounded-xl hover:bg-[#202e44]/[0.04]"
+                  className="flex items-center justify-between w-full px-4 py-3 text-base font-medium text-[#2C3E50] rounded-xl hover:bg-[#2C3E50]/[0.04]"
                   onClick={() => setMobileExpanded(mobileExpanded === "services" ? null : "services")}
                 >
                   Services
@@ -306,10 +302,10 @@ const Navbar1 = () => {
                           <Link
                             key={item.label}
                             to={item.href}
-                            className="flex items-center gap-2 px-4 py-2.5 text-sm text-[#202e44]/75 rounded-lg hover:bg-[#88734C]/10 hover:text-[#88734C]"
+                            className="flex items-center gap-2 px-4 py-2.5 text-sm text-[#2C3E50]/75 rounded-lg hover:bg-[#C9A96E]/10 hover:text-[#C9A96E]"
                             onClick={() => setIsOpen(false)}
                           >
-                            <item.icon size={14} className="text-[#88734C]" />
+                            <item.icon size={14} className="text-[#C9A96E]" />
                             {item.label}
                           </Link>
                         ))}
@@ -322,7 +318,7 @@ const Navbar1 = () => {
               {/* Mobile Projects accordion */}
               <div>
                 <button
-                  className="flex items-center justify-between w-full px-4 py-3 text-base font-medium text-[#202e44] rounded-xl hover:bg-[#202e44]/[0.04]"
+                  className="flex items-center justify-between w-full px-4 py-3 text-base font-medium text-[#2C3E50] rounded-xl hover:bg-[#2C3E50]/[0.04]"
                   onClick={() => setMobileExpanded(mobileExpanded === "projects" ? null : "projects")}
                 >
                   Projects
@@ -341,7 +337,7 @@ const Navbar1 = () => {
                           <Link
                             key={item.label}
                             to={item.href}
-                            className="flex items-center px-4 py-2.5 text-sm text-[#202e44]/75 rounded-lg hover:bg-[#88734C]/10 hover:text-[#88734C]"
+                            className="flex items-center px-4 py-2.5 text-sm text-[#2C3E50]/75 rounded-lg hover:bg-[#C9A96E]/10 hover:text-[#C9A96E]"
                             onClick={() => setIsOpen(false)}
                           >
                             {item.label}
@@ -354,27 +350,27 @@ const Navbar1 = () => {
               </div>
 
               <button
-                className="flex items-center w-full text-left px-4 py-3 text-base font-medium text-[#202e44] rounded-xl hover:bg-[#202e44]/[0.04]"
+                className="flex items-center w-full text-left px-4 py-3 text-base font-medium text-[#2C3E50] rounded-xl hover:bg-[#2C3E50]/[0.04]"
                 onClick={() => {
-                  setIsOpen(false);
-                  const el = document.getElementById("about-section");
+                  setIsOpen(false)
+                  const el = document.getElementById("about-section")
                   if (el) {
-                    el.scrollIntoView({ behavior: "smooth" });
+                    el.scrollIntoView({ behavior: "smooth" })
                   } else {
-                    navigate("/");
-                    setTimeout(() => document.getElementById("about-section")?.scrollIntoView({ behavior: "smooth" }), 150);
+                    navigate("/")
+                    setTimeout(() => document.getElementById("about-section")?.scrollIntoView({ behavior: "smooth" }), 150)
                   }
                 }}
               >About</button>
-              <Link to="/contact" className="flex items-center px-4 py-3 text-base font-medium text-[#202e44] rounded-xl hover:bg-[#202e44]/[0.04]" onClick={() => setIsOpen(false)}>Contact</Link>
+              <Link to="/contact" className="flex items-center px-4 py-3 text-base font-medium text-[#2C3E50] rounded-xl hover:bg-[#2C3E50]/[0.04]" onClick={() => setIsOpen(false)}>Contact</Link>
 
               <div className="pt-4">
                 <Link
                   to="/contact"
-                  className="flex items-center justify-center w-full py-3.5 text-base font-semibold text-white bg-[#88734C] rounded-2xl hover:bg-[#202e44] transition-colors"
+                  className="flex items-center justify-center w-full py-3.5 text-base font-semibold text-white bg-[#C9A96E] rounded-2xl hover:bg-[#2C3E50] transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
-                  Get a Free Quote
+                  Free Consultation
                 </Link>
               </div>
             </div>

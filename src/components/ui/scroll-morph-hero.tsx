@@ -49,18 +49,18 @@ function FlipCard({ src, index, target }: FlipCardProps) {
                     className="absolute inset-0 h-full w-full overflow-hidden rounded-xl shadow-lg bg-[#F8F8F2]"
                     style={{ backfaceVisibility: "hidden" }}
                 >
-                    <img src={src} alt={`furniture-${index}`} className="h-full w-full object-cover" />
+                    <img src={src} alt={`interior-project-${index}`} className="h-full w-full object-cover" />
                     <div className="absolute inset-0 bg-black/10 transition-colors group-hover:bg-transparent" />
                 </div>
 
                 {/* Back Face */}
                 <div
-                    className="absolute inset-0 h-full w-full overflow-hidden rounded-xl shadow-lg bg-[#202e44] flex flex-col items-center justify-center p-4 border border-[#202e44]/50"
+                    className="absolute inset-0 h-full w-full overflow-hidden rounded-xl shadow-lg bg-[#2C3E50] flex flex-col items-center justify-center p-4 border border-[#2C3E50]/50"
                     style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
                 >
                     <div className="text-center">
-                        <p className="text-[8px] font-bold text-[#c4a97a] uppercase tracking-widest mb-1">View</p>
-                        <p className="text-xs font-medium text-white">Details</p>
+                        <p className="text-[8px] font-bold text-[#C9A96E] uppercase tracking-widest mb-1">View</p>
+                        <p className="text-xs font-medium text-white">Project</p>
                     </div>
                 </div>
             </motion.div>
@@ -69,13 +69,15 @@ function FlipCard({ src, index, target }: FlipCardProps) {
 }
 
 // --- Main Hero Component ---
-const TOTAL_IMAGES = 12;
+const TOTAL_IMAGES = 17;
 
 const IMAGES = [
     "/images/img-01.jpeg", "/images/img-02.jpeg", "/images/img-03.jpeg",
     "/images/img-04.jpeg", "/images/img-05.jpeg", "/images/img-06.jpeg",
     "/images/img-07.jpeg", "/images/img-08.jpeg", "/images/img-09.jpeg",
     "/images/img-10.jpeg", "/images/img-11.jpeg", "/images/img-12.jpeg",
+    "/images/img-13.jpeg", "/images/img-14.jpeg", "/images/img-15.jpeg",
+    "/images/img-16.jpeg", "/images/img-17.jpeg",
 ];
 
 const lerp = (start: number, end: number, t: number) => start * (1 - t) + end * t;
@@ -156,7 +158,7 @@ export default function IntroAnimation() {
     const taglineOpacity = showTagline ? Math.max(0, 0.6 - morphValue) / 0.6 : 0;
 
     return (
-        <div ref={containerRef} className="relative w-full h-full bg-[#F8F8F2] overflow-hidden">
+        <div ref={containerRef} className="relative w-full h-full bg-[#F9F7F4] overflow-hidden">
             <div className="flex h-full w-full flex-col items-center justify-center">
 
                 {/* Central tagline — visible during circle phase */}
@@ -165,16 +167,16 @@ export default function IntroAnimation() {
                         animate={{ opacity: taglineOpacity, y: 0, filter: "blur(0px)" }}
                         initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
                         transition={{ duration: 0.8 }}
-                        className="text-2xl font-semibold tracking-tight text-[#202e44] md:text-4xl px-4"
+                        className="text-2xl font-semibold tracking-tight text-[#2C3E50] md:text-4xl px-4"
                     >
-                        Crafted in Rajasthan.{" "}
-                        <span className="text-[#88734C]">Built for Generations.</span>
+                        Designing Spaces.{" "}
+                        <span className="text-[#C9A96E]">Crafting Experiences.</span>
                     </motion.h1>
                     <motion.p
                         animate={{ opacity: taglineOpacity * 0.7 }}
                         initial={{ opacity: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="mt-3 text-xs font-semibold tracking-[0.2em] text-[#202e44]/60"
+                        className="mt-3 text-xs font-semibold tracking-[0.2em] text-[#2C3E50]/60"
                     >
                         SCROLL TO EXPLORE
                     </motion.p>
@@ -187,13 +189,13 @@ export default function IntroAnimation() {
                     transition={{ duration: 0.7 }}
                     className="absolute top-[6%] z-10 flex flex-col items-center justify-center text-center pointer-events-none px-4 w-full"
                 >
-                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold text-[#202e44] tracking-tight mb-3">
-                        Maa Ashapura Furniture
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold text-[#2C3E50] tracking-tight mb-3">
+                        Jay Interior
                     </h2>
-                    <p className="text-sm md:text-base text-[#202e44]/70 max-w-md leading-relaxed">
-                        Premium handcrafted teak, sheesham & mango wood furniture —
+                    <p className="text-sm md:text-base text-[#2C3E50]/70 max-w-md leading-relaxed">
+                        Premium interior design & turnkey projects across Mumbai —
                         <br className="hidden md:block" />
-                        direct from our workshop in Sojat Road, Rajasthan.
+                        transforming homes, offices & commercial spaces since 2014.
                     </p>
                 </motion.div>
 

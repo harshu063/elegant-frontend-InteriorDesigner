@@ -68,15 +68,15 @@ body {
 
 /* Shared section label utility */
 .section-label {
-  @apply text-xs font-semibold tracking-[0.2em] uppercase text-[#88734C] block mb-3;
+  @apply text-xs font-semibold tracking-[0.2em] uppercase text-[#C9A96E] block mb-3;
 }
 
 /* Shared section heading utility */
 .section-heading {
-  @apply text-3xl md:text-4xl font-semibold text-[#202e44] mb-4;
+  @apply text-3xl md:text-4xl font-semibold text-[#2C3E50] mb-4;
 }
 
 /* Shared section description utility */
 .section-desc {
-  @apply text-base text-[#202e44]/70 leading-relaxed;
+  @apply text-base text-[#2C3E50]/70 leading-relaxed;
 }

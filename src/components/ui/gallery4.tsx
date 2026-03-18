@@ -19,48 +19,62 @@ export interface Gallery4Props {
   items?: Gallery4Item[];
 }
 
-const furnitureProjects: Gallery4Item[] = [
+const interiorProjects: Gallery4Item[] = [
   {
     id: "project-1",
-    title: "Heritage Haveli Hotel — Suite Collection, Jaisalmer",
-    description: "48 hand-carved teak four-poster beds with jali headboards, brass-inlay wardrobes, and custom dining sets for a 24-room boutique hotel. Delivered and installed over 8 weeks.",
+    title: "3BHK Full Makeover — Mira Road East",
+    description: "1,200 sq.ft. apartment, bare walls to move-in ready. Open-plan living room with built-in TV unit, matte-white modular kitchen with walnut accents, master bedroom with floor-to-ceiling concealed wardrobe, and cove lighting throughout.",
     href: "#",
-    image: "/images/img-20.jpeg",
+    image: "/images/img-25.jpeg",
   },
   {
     id: "project-2",
-    title: "Tech Firm HQ — Executive Interiors, Gurgaon",
-    description: "Custom sheesham workstations, conference tables, and reception counter for a 120-seat corporate campus. 240+ pieces delivered across 3 floors in 10 weeks.",
+    title: "Corporate Office Fit-Out — Borivali West",
+    description: "3,500 sq.ft. office for a financial services firm. Executive cabins in smoked oak veneer, open-plan workstations with cable management, a branded reception lobby, and a glass-partition boardroom — completed in 6 weeks, zero operational downtime.",
     href: "#",
-    image: "/images/img-21.jpeg",
+    image: "/images/img-26.jpeg",
   },
   {
     id: "project-3",
-    title: "Lakeside Private Villa — Collector's Home, Udaipur",
-    description: "End-to-end furnishing for a 6,000 sq.ft. residence: 14-seater carved teak dining suite, hand-painted bedroom sets for 4 rooms, and a floor-to-ceiling sheesham home library.",
+    title: "Luxury Villa Interior — Vasai East",
+    description: "4,200 sq.ft. bungalow, turnkey delivery. Double-height foyer with backlit stone panels, chef's kitchen with island counter, dedicated home theatre, and custom furniture designed to order across all 5 rooms.",
     href: "#",
-    image: "/images/img-22.jpeg",
+    image: "/images/img-27.jpeg",
   },
   {
     id: "project-4",
-    title: "Rajasthani Fine Dining Restaurant — Bandra, Mumbai",
-    description: "60-cover restaurant interior with carved sheesham dining chairs, hand-blocked fabric seats, teak bar counter with brass fittings, and Marwari motif wall panel installations.",
+    title: "Café Interior Design — Mira Road",
+    description: "1,800 sq.ft. specialty café: warm terracotta palette, reclaimed wood tables, layered Edison pendant lighting, and a custom barista bar. The redesign increased average dwell time by 35% and became the owner's most photographed location.",
     href: "#",
-    image: "/images/img-23.jpeg",
+    image: "/images/img-28.jpeg",
   },
   {
     id: "project-5",
-    title: "NRI Home — Export Delivery, Toronto, Canada",
-    description: "A complete sheesham bedroom set, carved console table, and traditional takhat with storage — crafted, ISPM-15 certified, and shipped to a Rajasthani family's home in Canada.",
+    title: "2BHK Space Optimisation — Dahisar East",
+    description: "780 sq.ft. apartment redesigned to feel twice its size. Floor-to-ceiling storage in every room, fold-away dining table, modular kitchen with full-height loft units, and a warm lighting scheme that makes small feel generous.",
     href: "#",
-    image: "/images/img-24.jpeg",
+    image: "/images/img-29.jpeg",
+  },
+  {
+    id: "project-6",
+    title: "Retail Showroom — Bhayandar West",
+    description: "Fashion brand showroom: zoned product displays, backlit feature wall with brand logo, recessed track lighting on adjustable rails, and a seamless checkout counter — a space that lets the merchandise do the talking.",
+    href: "#",
+    image: "/images/img-30.jpeg",
+  },
+  {
+    id: "project-7",
+    title: "New Possession Turnkey — Nalasopara West",
+    description: "First possession to fully furnished in 11 weeks. Civil corrections, tile selection, false ceilings, modular kitchen and wardrobes, bathroom vanities, complete furniture, and final décor styling — handed over spotless and move-in ready.",
+    href: "#",
+    image: "/images/img-31.jpeg",
   },
 ];
 
 const Gallery4 = ({
-  title = "Completed Projects",
-  description = "From heritage hotels in Jaisalmer to corporate campuses in Gurgaon — each project is a testament to craft that outlasts trends. Residential, hospitality, commercial, and export work across 18+ states.",
-  items = furnitureProjects,
+  title = "Selected Projects",
+  description = "Apartments, offices, cafés, villas — each one different, each one built to the same standard. Here's a selection of work from across the Mumbai region.",
+  items = interiorProjects,
 }: Gallery4Props) => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
@@ -80,20 +94,20 @@ const Gallery4 = ({
   }, [carouselApi]);
 
   return (
-    <section className="py-14 md:py-24 bg-[#F8F8F2]">
+    <section className="py-14 md:py-24 bg-[#F9F7F4]">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="mb-8 md:mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-0">
           <div className="flex flex-col gap-2">
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#88734C]">Portfolio</span>
-            <h2 className="text-3xl md:text-4xl font-semibold text-[#202e44]">{title}</h2>
-            <p className="text-base text-[#202e44]/70 leading-relaxed max-w-xl mt-1">{description}</p>
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#C9A96E]">Portfolio</span>
+            <h2 className="text-3xl md:text-4xl font-semibold text-[#2C3E50]">{title}</h2>
+            <p className="text-base text-[#2C3E50]/70 leading-relaxed max-w-xl mt-1">{description}</p>
           </div>
           <div className="hidden shrink-0 gap-2 md:flex">
             <Button
               size="icon" variant="outline"
               onClick={() => carouselApi?.scrollPrev()}
               disabled={!canScrollPrev}
-              className="rounded-full disabled:pointer-events-auto border-[#202e44]/20 hover:bg-[#88734C] hover:text-white hover:border-[#88734C] disabled:opacity-30 transition-all"
+              className="rounded-full disabled:pointer-events-auto border-[#2C3E50]/20 hover:bg-[#C9A96E] hover:text-white hover:border-[#C9A96E] disabled:opacity-30 transition-all"
             >
               <ArrowLeft className="size-4" />
             </Button>
@@ -101,7 +115,7 @@ const Gallery4 = ({
               size="icon" variant="outline"
               onClick={() => carouselApi?.scrollNext()}
               disabled={!canScrollNext}
-              className="rounded-full disabled:pointer-events-auto border-[#202e44]/20 hover:bg-[#88734C] hover:text-white hover:border-[#88734C] disabled:opacity-30 transition-all"
+              className="rounded-full disabled:pointer-events-auto border-[#2C3E50]/20 hover:bg-[#C9A96E] hover:text-white hover:border-[#C9A96E] disabled:opacity-30 transition-all"
             >
               <ArrowRight className="size-4" />
             </Button>
@@ -124,12 +138,12 @@ const Gallery4 = ({
                       alt={item.title}
                       className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#202e44]/85 via-[#202e44]/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#2C3E50]/85 via-[#2C3E50]/20 to-transparent" />
                     <div className="absolute inset-x-0 bottom-0 p-6 md:p-7">
-                      <p className="text-[#88734C] text-xs font-semibold tracking-widest uppercase mb-2">Completed Project</p>
+                      <p className="text-[#C9A96E] text-xs font-semibold tracking-widest uppercase mb-2">Completed Project</p>
                       <h3 className="text-lg font-semibold text-white mb-2 leading-snug">{item.title}</h3>
                       <p className="text-white/70 text-sm line-clamp-2 leading-relaxed mb-4">{item.description}</p>
-                      <span className="inline-flex items-center text-xs font-semibold text-white bg-[#88734C] px-3 py-1.5 rounded-full gap-1.5 transition-all group-hover:bg-white group-hover:text-[#88734C]">
+                      <span className="inline-flex items-center text-xs font-semibold text-white bg-[#C9A96E] px-3 py-1.5 rounded-full gap-1.5 transition-all group-hover:bg-white group-hover:text-[#C9A96E]">
                         View Project <ArrowRight className="size-3 transition-transform group-hover:translate-x-0.5" />
                       </span>
                     </div>
@@ -146,8 +160,8 @@ const Gallery4 = ({
               key={index}
               className={`rounded-full transition-all duration-300 ${
                 currentSlide === index
-                  ? "bg-[#88734C] w-5 h-2"
-                  : "bg-[#202e44]/20 w-2 h-2 hover:bg-[#88734C]/40"
+                  ? "bg-[#C9A96E] w-5 h-2"
+                  : "bg-[#2C3E50]/20 w-2 h-2 hover:bg-[#C9A96E]/40"
               }`}
               onClick={() => carouselApi?.scrollTo(index)}
               aria-label={`Go to slide ${index + 1}`}

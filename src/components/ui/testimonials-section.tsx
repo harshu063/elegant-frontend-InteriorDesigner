@@ -5,68 +5,68 @@ import { TestimonialsColumn } from "@/components/ui/testimonials-columns-1"
 
 const testimonials = [
   {
-    text: "I had been searching for a proper sheesham dining table for almost a year — everything in Delhi showrooms was either overpriced or poorly finished. Maa Ashapura understood exactly what I wanted. The craftsmanship is genuinely beautiful — my guests comment on it every time.",
+    text: "Jay Interior completely transformed our 3BHK in Mira Road. Om Prakash sir listened patiently to every little detail we had in mind — the living room turned out beyond what we imagined. Clean lines, warm tones, and everything delivered on schedule.",
     image: "https://randomuser.me/api/portraits/women/1.jpg",
-    name: "Priya Mehra",
-    role: "South Delhi — Custom Sheesham Table",
+    name: "Priya Sharma",
+    role: "Mira Road East — 3BHK Residential",
   },
   {
-    text: "We furnished our entire 4BHK through them — bedroom sets for three rooms, a dining set, and a custom study unit. Every dimension was exactly as specified. The teak has a richness you simply don't get from factory furniture.",
+    text: "We hired Jay Interior for our office fit-out in Borivali and the results were phenomenal. The space feels premium without being flashy — exactly the brand image we wanted. Professional team, on-time delivery, and zero hassle throughout.",
     image: "https://randomuser.me/api/portraits/men/2.jpg",
-    name: "Rajeev Singhania",
-    role: "Ahmedabad — Full 4BHK Package",
+    name: "Rohit Desai",
+    role: "Borivali West — Office Interior",
   },
   {
-    text: "Being from Rajasthan myself, I have high standards for wood craftsmanship. Maa Ashapura is the real thing — you can see the hand-finishing, the carving is crisp, the joints are mortise-and-tenon the old way. Furniture your grandchildren will still be using.",
-    image: "https://randomuser.me/api/portraits/men/3.jpg",
-    name: "Harshvardhan Ranka",
-    role: "Jaipur — Farmhouse Furnishing",
+    text: "The modular kitchen they designed for us is absolutely stunning. Smart storage, quality shutters, and the colour palette ties the whole flat together. My mother-in-law, who is very particular, couldn't stop praising the work. That says everything.",
+    image: "https://randomuser.me/api/portraits/women/3.jpg",
+    name: "Anita Verma",
+    role: "Bhayandar East — Modular Kitchen",
   },
   {
-    text: "We run a boutique restaurant and needed furniture that matched our Rajasthani-heritage concept. Maa Ashapura delivered exactly that — 14 dining tables and 60 chairs in carved sheesham. Customers ask about the furniture specifically.",
+    text: "I was nervous about giving someone full creative control over my home but Jay Interior put me at ease from the first meeting. The 3D renders were accurate — the final space looks exactly like what they showed me. No nasty surprises.",
     image: "https://randomuser.me/api/portraits/men/4.jpg",
-    name: "Amit Kulkarni",
-    role: "Pune — 60-Cover Restaurant Interior",
+    name: "Suresh Pillai",
+    role: "Dahisar — Full Home Renovation",
   },
   {
-    text: "Very happy with the quality of the mango wood console and bookshelf I ordered — the natural grain is stunning. The installation team was professional and careful. Would absolutely recommend to anyone looking for real solid wood at an honest price.",
+    text: "We run a café in Mira Road and wanted an aesthetic that felt curated, not generic. Jay Interior delivered a space that consistently gets photographed by customers. Footfall went up within weeks of reopening after the redesign.",
     image: "https://randomuser.me/api/portraits/women/5.jpg",
-    name: "Sunita Joshi",
-    role: "Hyderabad — Mango Wood Console",
+    name: "Neha Gupta",
+    role: "Mira Road — Café Interior",
   },
   {
-    text: "I ordered a custom wardrobe and sheesham bed frame as gifts for my daughter's new home. The carved detail on the headboard is extraordinary — it looks like something from a heritage haveli but designed for a modern apartment.",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-    name: "Meena Rathore",
-    role: "Ahmedabad — Custom Wardrobe & Carved Bed",
+    text: "The false ceiling and lighting work they did in our hall is the first thing every guest notices. Beautifully layered, warm ambient lighting — it transformed a plain flat into something that feels like a magazine shoot. Great value for money.",
+    image: "https://randomuser.me/api/portraits/men/6.jpg",
+    name: "Vishal Tiwari",
+    role: "Kandivali West — False Ceiling & Lighting",
   },
   {
-    text: "Ordered a teak king bed and matching wardrobe for our new home. The delivery team was careful, installation was clean, and the quality is outstanding. This is furniture you can see will last decades — not the disposable kind.",
-    image: "https://randomuser.me/api/portraits/men/7.jpg",
-    name: "Vikram Malhotra",
-    role: "Chandigarh — Teak Bedroom Suite",
+    text: "The team was incredibly professional from start to finish. Weekly updates, proactive problem-solving, and they actually listened when I gave feedback mid-project. My 2BHK in Nalasopara now looks like a premium apartment twice its square footage.",
+    image: "https://randomuser.me/api/portraits/women/7.jpg",
+    name: "Kavita Menon",
+    role: "Nalasopara East — 2BHK Makeover",
   },
   {
-    text: "Maa Ashapura made a custom sheesham study unit for my home office. The finish is immaculate and the dimensions were perfectly matched to my space. Communication was clear throughout and they delivered exactly on time.",
-    image: "https://randomuser.me/api/portraits/women/8.jpg",
-    name: "Kavitha Nair",
-    role: "Bengaluru — Custom Study Unit",
+    text: "What impressed me most was the attention to Vastu without compromising modern aesthetics. Jay Interior balanced both beautifully — the home feels harmonious and purposeful in every room. Highly recommended for anyone building new.",
+    image: "https://randomuser.me/api/portraits/men/8.jpg",
+    name: "Manoj Joshi",
+    role: "Vasai West — New Build Interiors",
   },
   {
-    text: "Direct from the workshop means no showroom markup and you're dealing with the people who actually make the furniture. Our dining set arrived in perfect condition — the quality is far above what you find in any Delhi store at twice the price.",
-    image: "https://randomuser.me/api/portraits/men/9.jpg",
-    name: "Deepak Arora",
-    role: "New Delhi — Dining & Living Set",
+    text: "I compared four studios before choosing Jay Interior. Their proposal was the most detailed — specific finishes, accurate timelines, and a clear breakdown of costs. No vague estimates, no scope creep. Exactly what they promised, delivered.",
+    image: "https://randomuser.me/api/portraits/women/9.jpg",
+    name: "Deepa Nair",
+    role: "Mira Road East — Turnkey 3BHK",
   },
 ]
 
-const firstColumn = testimonials.slice(0, 3)
+const firstColumn  = testimonials.slice(0, 3)
 const secondColumn = testimonials.slice(3, 6)
-const thirdColumn = testimonials.slice(6, 9)
+const thirdColumn  = testimonials.slice(6, 9)
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-14 md:py-24 bg-[#202e44] overflow-hidden">
+    <section className="py-14 md:py-24 bg-[#2C3E50] overflow-hidden">
       <div className="container mx-auto px-4 max-w-6xl">
         <motion.div
           className="text-center mb-10 md:mb-16"
@@ -75,14 +75,14 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#c4a97a] block mb-3">
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#C9A96E] block mb-3">
             Client Stories
           </span>
           <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4">
             What Our Clients Say
           </h2>
           <p className="text-base text-white/60 max-w-xl mx-auto leading-relaxed">
-            From homeowners in Hyderabad to restaurant owners in Mumbai — real experiences from people who chose solid wood over shortcuts.
+            From Mira Road apartments to Borivali offices — real experiences from clients who trusted Jay Interior to design their spaces.
           </p>
         </motion.div>
       </div>
@@ -101,7 +101,7 @@ export default function TestimonialsSection() {
         viewport={{ once: true }}
       >
         <p className="text-white/40 text-sm">
-          500+ happy clients across India &amp; internationally — direct from our workshop in Sojat Road, Rajasthan.
+          250+ happy clients across Mira Road, Borivali, Bhayandar, Dahisar & beyond.
         </p>
       </motion.div>
     </section>

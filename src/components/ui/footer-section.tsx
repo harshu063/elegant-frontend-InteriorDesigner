@@ -10,7 +10,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { Facebook, Instagram, Linkedin, Send, Twitter, Sofa } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Send, Twitter, Layers } from "lucide-react"
 
 function Footerdemo() {
 
@@ -22,16 +22,16 @@ function Footerdemo() {
           {/* Brand + Newsletter */}
           <div className="relative">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#88734C] to-[#202e44] flex items-center justify-center">
-                <Sofa className="w-5 h-5 text-white" />
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#C9A96E] to-[#2C3E50] flex items-center justify-center">
+                <Layers className="w-5 h-5 text-white" />
               </div>
               <div>
-                <p className="text-sm font-bold text-[#202e44] dark:text-white leading-tight">Maa Ashapura</p>
-                <p className="text-[10px] text-[#88734C] font-medium tracking-wider uppercase leading-tight">Furniture</p>
+                <p className="text-sm font-bold text-[#2C3E50] dark:text-white leading-tight">Jay Interior</p>
+                <p className="text-[10px] text-[#C9A96E] font-medium tracking-wider uppercase leading-tight">Design Studio</p>
               </div>
             </div>
             <p className="mb-6 text-sm text-muted-foreground leading-relaxed">
-              Direct from our workshop in Sojat Road, Rajasthan. 15+ years of heritage craftsmanship in teak, sheesham & mango wood. No middlemen. No MDF. No shortcuts.
+              Premium interior design & turnkey projects across Mira Road, Borivali, Bhayandar, Dahisar & beyond. 10+ years. 300+ spaces transformed.
             </p>
             <h3 className="mb-3 text-base font-semibold">Stay Updated</h3>
             <form className="relative">
@@ -43,20 +43,20 @@ function Footerdemo() {
               <Button
                 type="submit"
                 size="icon"
-                className="absolute right-1 top-1 h-8 w-8 rounded-full bg-[#88734C] text-white hover:bg-[#202e44] transition-colors"
+                className="absolute right-1 top-1 h-8 w-8 rounded-full bg-[#C9A96E] text-white hover:bg-[#2C3E50] transition-colors"
               >
                 <Send className="h-4 w-4" />
                 <span className="sr-only">Subscribe</span>
               </Button>
             </form>
-            <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-[#88734C]/10 blur-2xl" />
+            <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-[#C9A96E]/10 blur-2xl" />
           </div>
 
           {/* Quick Links */}
           <div>
             <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
             <nav className="space-y-2 text-sm">
-              <Link to="/" className="block transition-colors hover:text-[#88734C]">Home</Link>
+              <Link to="/" className="block transition-colors hover:text-[#C9A96E]">Home</Link>
               <button
                 onClick={() => {
                   const el = document.getElementById("about-section");
@@ -67,11 +67,11 @@ function Footerdemo() {
                     setTimeout(() => document.getElementById("about-section")?.scrollIntoView({ behavior: "smooth" }), 300);
                   }
                 }}
-                className="block text-left w-full transition-colors hover:text-[#88734C]"
+                className="block text-left w-full transition-colors hover:text-[#C9A96E]"
               >About Us</button>
-              <Link to="/services" className="block transition-colors hover:text-[#88734C]">Services</Link>
-              <Link to="/projects" className="block transition-colors hover:text-[#88734C]">Projects</Link>
-              <Link to="/contact" className="block transition-colors hover:text-[#88734C]">Contact Us</Link>
+              <Link to="/services" className="block transition-colors hover:text-[#C9A96E]">Services</Link>
+              <Link to="/projects" className="block transition-colors hover:text-[#C9A96E]">Projects</Link>
+              <Link to="/contact" className="block transition-colors hover:text-[#C9A96E]">Contact Us</Link>
             </nav>
           </div>
 
@@ -79,12 +79,12 @@ function Footerdemo() {
           <div>
             <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
             <address className="space-y-2 text-sm not-italic text-muted-foreground">
-              <p className="font-medium text-foreground">Heera Lal — Owner</p>
-              <p>Char Bhuja Mandir, Musaliya</p>
-              <p>Sojat Road, Rajasthan — 306103</p>
-              <p>Phone: <a href="tel:+919928859926" className="hover:text-[#88734C]">+91 99288 59926</a></p>
-              <p>Phone: <a href="tel:+918239209231" className="hover:text-[#88734C]">+91 82392 09231</a></p>
-              <p>Email: <a href="mailto:maaashapurafurniture@gmail.com" className="hover:text-[#88734C]">maaashapurafurniture@gmail.com</a></p>
+              <p className="font-medium text-foreground">Om Prakash Chauhan — Owner</p>
+              <p>Gala No. 2, Opp. Kheteshwar Ashram</p>
+              <p>Dachkun Fada, Kashi Meera</p>
+              <p>Mira Road East — 401107</p>
+              <p>Phone: <a href="tel:+919920904475" className="hover:text-[#C9A96E]">+91 99209 04475</a></p>
+              <p>Email: <a href="mailto:jayinterior.miraroad@gmail.com" className="hover:text-[#C9A96E]">jayinterior.miraroad@gmail.com</a></p>
             </address>
           </div>
 
@@ -95,7 +95,7 @@ function Footerdemo() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="rounded-full hover:bg-[#88734C] hover:text-white hover:border-[#88734C]">
+                    <Button variant="outline" size="icon" className="rounded-full hover:bg-[#C9A96E] hover:text-white hover:border-[#C9A96E]">
                       <Facebook className="h-4 w-4" />
                       <span className="sr-only">Facebook</span>
                     </Button>
@@ -106,7 +106,7 @@ function Footerdemo() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="rounded-full hover:bg-[#88734C] hover:text-white hover:border-[#88734C]">
+                    <Button variant="outline" size="icon" className="rounded-full hover:bg-[#C9A96E] hover:text-white hover:border-[#C9A96E]">
                       <Twitter className="h-4 w-4" />
                       <span className="sr-only">Twitter</span>
                     </Button>
@@ -117,7 +117,7 @@ function Footerdemo() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="rounded-full hover:bg-[#88734C] hover:text-white hover:border-[#88734C]">
+                    <Button variant="outline" size="icon" className="rounded-full hover:bg-[#C9A96E] hover:text-white hover:border-[#C9A96E]">
                       <Instagram className="h-4 w-4" />
                       <span className="sr-only">Instagram</span>
                     </Button>
@@ -128,7 +128,7 @@ function Footerdemo() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="rounded-full hover:bg-[#88734C] hover:text-white hover:border-[#88734C]">
+                    <Button variant="outline" size="icon" className="rounded-full hover:bg-[#C9A96E] hover:text-white hover:border-[#C9A96E]">
                       <Linkedin className="h-4 w-4" />
                       <span className="sr-only">LinkedIn</span>
                     </Button>
@@ -142,12 +142,12 @@ function Footerdemo() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 text-center md:flex-row">
           <p className="text-sm text-muted-foreground">
-            © 2026 Maa Ashapura Furniture. All rights reserved. Crafted with ❤️ in Rajasthan.
+            © 2026 Jay Interior. All rights reserved. Designing Mumbai since 2014.
           </p>
           <nav className="flex gap-4 text-sm">
-            <a href="#" className="transition-colors hover:text-[#88734C]">Privacy Policy</a>
-            <a href="#" className="transition-colors hover:text-[#88734C]">Terms of Service</a>
-            <Link to="/contact" className="transition-colors hover:text-[#88734C]">Get a Quote</Link>
+            <a href="#" className="transition-colors hover:text-[#C9A96E]">Privacy Policy</a>
+            <a href="#" className="transition-colors hover:text-[#C9A96E]">Terms of Service</a>
+            <Link to="/contact" className="transition-colors hover:text-[#C9A96E]">Get a Quote</Link>
           </nav>
         </div>
       </div>

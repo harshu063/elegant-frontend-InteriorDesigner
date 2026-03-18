@@ -16,63 +16,63 @@ interface Feature72Props {
   features?: Feature[];
 }
 
-const furnitureServices: Feature[] = [
+const interiorServices: Feature[] = [
   {
-    id: "custom-furniture",
-    title: "Bespoke Custom Furniture",
-    description: "Your home has its own story — your furniture should tell it. We craft pieces precisely to your space, style, and budget, with every dimension, finish, and carving detail yours to choose in Grade A teak, sheesham, or mango wood. No catalogue sizes, no compromises.",
-    image: "/images/img-14.jpeg",
-  },
-  {
-    id: "bedroom-sets",
-    title: "Bedroom Sets & Wardrobes",
-    description: "Complete bedroom suites built with traditional mortise-and-tenon joinery — king beds with hand-carved headboards, spacious wardrobes with premium brass fittings, matching dressers, and bedside tables. Furniture you will still be proud of in 30 years.",
-    image: "/images/img-15.jpeg",
-  },
-  {
-    id: "living-room",
-    title: "Living Room Furniture",
-    description: "Handcrafted sofa frames, centre tables, TV units, and display shelves that blend clean contemporary aesthetics with authentic Rajasthani craft. Warm, refined, and unmistakably solid wood — never a veneer in sight.",
-    image: "/images/img-16.jpeg",
-  },
-  {
-    id: "office-furniture",
-    title: "Office & Commercial Furniture",
-    description: "Solid wood in a workspace sends a clear message: permanence and quality. We manufacture conference tables, executive desks, reception counters, and modular storage for corporate offices and co-working spaces — built for daily use while retaining their warmth.",
-    image: "/images/img-17.jpeg",
-  },
-  {
-    id: "kitchen-cabinets",
-    title: "Kitchen Cabinets & Modular Interiors",
-    description: "Modular kitchen cabinets, overhead storage, pantry organisers, and countertop frameworks in solid wood and quality ply. We maximise your kitchen's efficiency while adding the warmth that no laminate sheet will ever replicate.",
-    image: "/images/img-18.jpeg",
-  },
-  {
-    id: "wooden-decor",
-    title: "Wooden Handicrafts & Décor",
-    description: "Carved wall panels, jhoola swings, hand-painted almirahs, door panels, and bespoke art objects rooted in Rajasthani tradition. Pieces that make a room complete rather than merely furnished — each one a conversation starter.",
+    id: "residential",
+    title: "Residential Interior Design",
+    description: "Whether it's a 1BHK in Mira Road or a duplex in Vasai, we design homes that reflect your personality. Every layout is optimised for how you actually live — from morning routines to weekend hosting — with Vastu compliance built in where needed.",
     image: "/images/img-19.jpeg",
+  },
+  {
+    id: "commercial",
+    title: "Commercial & Office Interiors",
+    description: "Your office is your brand's first impression. We design corporate offices, retail showrooms, clinics, and co-working spaces across Mumbai that project authority, comfort, and purpose — delivered without disrupting your day-to-day operations.",
+    image: "/images/img-20.jpeg",
+  },
+  {
+    id: "modular",
+    title: "Modular Kitchen & Wardrobe",
+    description: "Engineered for Mumbai kitchens — compact, clever, and built to last. Soft-close hinges, anti-slam drawers, waterproof carcasses, and finishes from matte to high-gloss. Wardrobes designed to the last centimetre of your room.",
+    image: "/images/img-21.jpeg",
+  },
+  {
+    id: "false-ceiling",
+    title: "False Ceiling & Lighting Design",
+    description: "The right ceiling changes everything. Gypsum coffered ceilings, POP cove lighting, recessed downlights, and warm accent strips — we layer light and architecture to make every room feel larger, warmer, and intentionally designed.",
+    image: "/images/img-22.jpeg",
+  },
+  {
+    id: "furniture",
+    title: "Custom Furniture & Built-Ins",
+    description: "Furniture built around your space, not the other way around. TV units with hidden wiring, beds with hydraulic storage, study nooks in awkward corners — every piece is made to measure and finished to match the complete design scheme.",
+    image: "/images/img-23.jpeg",
+  },
+  {
+    id: "turnkey",
+    title: "Turnkey Interior Projects",
+    description: "From bare walls to move-in ready — we handle everything. Civil work, false ceilings, flooring, electrical, carpentry, painting, furnishing, and final styling. One point of contact, zero coordination stress, and a home delivered on schedule.",
+    image: "/images/img-24.jpeg",
   },
 ];
 
 export const Feature72 = ({
-  heading = "Our Services",
-  description = "Every service is delivered with Grade A solid wood, skilled Rajasthani craftsmanship, and a no-middleman promise. We don't make furniture in batches — we make it the right way, one piece at a time, built to outlast trends and pass between generations.",
+  heading = "What We Do",
+  description = "Six core disciplines. One studio. Jay Interior covers everything from modular kitchens to full turnkey projects — so you never have to coordinate between contractors again.",
   linkUrl = "/contact",
-  linkText = "Get a Free Quote",
-  features = furnitureServices,
+  linkText = "Book a Free Site Visit",
+  features = interiorServices,
 }: Feature72Props) => {
   return (
-    <section className="py-14 md:py-24 bg-[#F8F8F2]">
+    <section className="py-14 md:py-24 bg-[#F9F7F4]">
       <div className="container mx-auto px-4 max-w-6xl flex flex-col gap-14">
         {/* Section header */}
         <div className="max-w-lg">
-          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#88734C] block mb-3">What We Offer</span>
-          <h2 className="text-3xl md:text-4xl font-semibold text-[#202e44] mb-4">{heading}</h2>
-          <p className="text-base text-[#202e44]/70 leading-relaxed mb-6">{description}</p>
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#C9A96E] block mb-3">What We Do</span>
+          <h2 className="text-3xl md:text-4xl font-semibold text-[#2C3E50] mb-4">{heading}</h2>
+          <p className="text-base text-[#2C3E50]/70 leading-relaxed mb-6">{description}</p>
           <Link
             to={linkUrl}
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#88734C] hover:text-[#202e44] transition-colors group"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C9A96E] hover:text-[#2C3E50] transition-colors group"
           >
             {linkText}
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
@@ -84,7 +84,7 @@ export const Feature72 = ({
           {features.map((feature) => (
             <div
               key={feature.id}
-              className="flex flex-col overflow-hidden rounded-2xl border border-[#202e44]/10 bg-white shadow-sm hover:shadow-md transition-shadow duration-300 group"
+              className="flex flex-col overflow-hidden rounded-2xl border border-[#2C3E50]/10 bg-white shadow-sm hover:shadow-md transition-shadow duration-300 group"
             >
               <div className="overflow-hidden">
                 <img
@@ -94,8 +94,8 @@ export const Feature72 = ({
                 />
               </div>
               <div className="px-4 py-4 md:px-7 md:py-7">
-                <h3 className="text-lg font-semibold text-[#202e44] mb-3">{feature.title}</h3>
-                <p className="text-sm text-[#202e44]/70 leading-relaxed">{feature.description}</p>
+                <h3 className="text-lg font-semibold text-[#2C3E50] mb-3">{feature.title}</h3>
+                <p className="text-sm text-[#2C3E50]/70 leading-relaxed">{feature.description}</p>
               </div>
             </div>
           ))}
