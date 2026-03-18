@@ -22,11 +22,16 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Fix Chrome Sandbox on Ubuntu
-        run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+      - name: Install Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
 
-      - name: Build Project & Prerender (react-snap)
+      - name: Build Project & Prerender
         run: npm run build
+        env:
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1

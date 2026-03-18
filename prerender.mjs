@@ -8,8 +8,9 @@ import path from 'path';
   const server = await preview({ preview: { port: 4173 } });
   
   console.log('Launching headless browser...');
-  const browser = await puppeteer.launch({ 
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'] 
+  const browser = await puppeteer.launch({
+    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
   });
   
   const page = await browser.newPage();
