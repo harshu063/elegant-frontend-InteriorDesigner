@@ -11,9 +11,11 @@
   },
   "reactSnap": {
     "source": "dist",
+    "puppeteerExecutablePath": "/usr/bin/google-chrome",
     "puppeteerArgs": [
       "--no-sandbox",
-      "--disable-setuid-sandbox"
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage"
     ]
   },
   "dependencies": {
