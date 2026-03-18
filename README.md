@@ -2,7 +2,7 @@
 
 <img src="https://img.shields.io/badge/Maa%20Ashapura-Furniture-88734C?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiPjxwYXRoIGQ9Ik0yMCAxMlY4SDRWMTIiLz48cGF0aCBkPSJNMiAxMmgxIi8+PHBhdGggZD0iTTIxIDEyaDEiLz48cGF0aCBkPSJNMyAxMnY2Ii8+PHBhdGggZD0iTTIxIDEydjYiLz48cGF0aCBkPSJNNCAxMGgxNiIvPjxwYXRoIGQ9Ik03IDE4aDEwIi8+PC9zdmc+" alt="Maa Ashapura Furniture" />
 
-# Maa Ashapura Furniture
+
 
 ### Premium Handcrafted Furniture — Portfolio Website
 
@@ -23,7 +23,7 @@
 
 ## Overview
 
-A fully responsive, animation-rich portfolio website for **Maa Ashapura Furniture** — a premium furniture manufacturer based in Rajasthan. The site showcases the business's 15+ years of handcrafted furniture work across residential, commercial, and hospitality projects.
+A fully responsive, animation-rich portfolio website  — a premium furniture manufacturer based in Rajasthan. The site showcases the business's 15+ years of handcrafted furniture work across residential, commercial, and hospitality projects.
 
 Built with a modern stack focused on smooth animations, mobile-first design, and real-world business integrations like WhatsApp contact.
 
@@ -118,7 +118,7 @@ public/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/maa-ashapura-furniture.git
+git clone https://github.com/your-username/elegant-frontend-InteriorDesigner.git
 cd maa-ashapura-furniture
 
 # Install dependencies
@@ -174,6 +174,6 @@ npm run preview    # Serve the /dist build locally
 
 <div align="center">
 
-Crafted with care for **Maa Ashapura Furniture** — Rajasthan, India
+Crafted with care 
 
 </div>

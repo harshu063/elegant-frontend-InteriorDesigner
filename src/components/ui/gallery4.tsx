@@ -94,11 +94,11 @@ const Gallery4 = ({
   }, [carouselApi]);
 
   return (
-    <section className="py-14 md:py-24 bg-[#F9F7F4]">
+    <section className="py-14 md:py-24 bg-[#FDF0EE]">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="mb-8 md:mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-0">
           <div className="flex flex-col gap-2">
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#C9A96E]">Portfolio</span>
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#C9A96E]">Our Work</span>
             <h2 className="text-3xl md:text-4xl font-semibold text-[#2C3E50]">{title}</h2>
             <p className="text-base text-[#2C3E50]/70 leading-relaxed max-w-xl mt-1">{description}</p>
           </div>

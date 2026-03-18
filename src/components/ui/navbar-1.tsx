@@ -100,7 +100,13 @@ const Navbar1 = () => {
             transition={{ duration: 0.3 }}
             className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#C9A96E] to-[#2C3E50] flex items-center justify-center shadow-sm"
           >
-            <Layers className="w-5 h-5 text-white" />
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M3 17V9.5a7 7 0 0 1 14 0V17" />
+              <line x1="1" y1="17" x2="19" y2="17" />
+              <line x1="7" y1="17" x2="7" y2="13" />
+              <line x1="13" y1="17" x2="13" y2="13" />
+              <line x1="7" y1="13" x2="13" y2="13" />
+            </svg>
           </motion.div>
           <div>
             <p className="text-[14px] font-bold text-[#2C3E50] leading-tight tracking-wide">Jay Interior</p>
@@ -265,7 +271,13 @@ const Navbar1 = () => {
             <div className="flex items-center justify-between px-6 py-5 border-b border-[#2C3E50]/10">
               <div className="flex items-center gap-2.5">
                 <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#C9A96E] to-[#2C3E50] flex items-center justify-center">
-                  <Layers className="w-5 h-5 text-white" />
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 17V9.5a7 7 0 0 1 14 0V17" />
+                    <line x1="1" y1="17" x2="19" y2="17" />
+                    <line x1="7" y1="17" x2="7" y2="13" />
+                    <line x1="13" y1="17" x2="13" y2="13" />
+                    <line x1="7" y1="13" x2="13" y2="13" />
+                  </svg>
                 </div>
                 <div>
                   <p className="text-[14px] font-bold text-[#2C3E50] tracking-wide">Jay Interior</p>

@@ -3,14 +3,13 @@
 import * as React from "react"
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { Facebook, Instagram, Linkedin, Send, Twitter, Layers } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Send, Twitter } from "lucide-react"
 
 function Footerdemo() {
 
@@ -23,7 +22,13 @@ function Footerdemo() {
           <div className="relative">
             <div className="flex items-center gap-2.5 mb-4">
               <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#C9A96E] to-[#2C3E50] flex items-center justify-center">
-                <Layers className="w-5 h-5 text-white" />
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 17V9.5a7 7 0 0 1 14 0V17" />
+                  <line x1="1" y1="17" x2="19" y2="17" />
+                  <line x1="7" y1="17" x2="7" y2="13" />
+                  <line x1="13" y1="17" x2="13" y2="13" />
+                  <line x1="7" y1="13" x2="13" y2="13" />
+                </svg>
               </div>
               <div>
                 <p className="text-sm font-bold text-[#2C3E50] dark:text-white leading-tight">Jay Interior</p>
@@ -33,22 +38,14 @@ function Footerdemo() {
             <p className="mb-6 text-sm text-muted-foreground leading-relaxed">
               Premium interior design & turnkey projects across Mira Road, Borivali, Bhayandar, Dahisar & beyond. 10+ years. 300+ spaces transformed.
             </p>
-            <h3 className="mb-3 text-base font-semibold">Stay Updated</h3>
-            <form className="relative">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="pr-12 backdrop-blur-sm"
-              />
-              <Button
-                type="submit"
-                size="icon"
-                className="absolute right-1 top-1 h-8 w-8 rounded-full bg-[#C9A96E] text-white hover:bg-[#2C3E50] transition-colors"
-              >
-                <Send className="h-4 w-4" />
-                <span className="sr-only">Subscribe</span>
-              </Button>
-            </form>
+            <h3 className="mb-2 text-base font-semibold">Start Your Project</h3>
+            <p className="text-sm text-muted-foreground mb-4 leading-relaxed">Book a free site visit — we'll assess your space and send a detailed proposal within 48 hours.</p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 bg-[#C9A96E] hover:bg-[#2C3E50] text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-colors"
+            >
+              Get a Free Quote <Send className="h-3.5 w-3.5" />
+            </Link>
             <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-[#C9A96E]/10 blur-2xl" />
           </div>
 

@@ -128,7 +128,7 @@ export default function AboutUsSection() {
     <section
       id="about-section"
       ref={sectionRef}
-      className="w-full py-14 md:py-24 px-4 bg-[#F9F7F4] text-[#2C3E50] overflow-hidden relative"
+      className="w-full py-14 md:py-24 px-4 bg-[#FDF0EE] text-[#2C3E50] overflow-hidden relative"
     >
       <motion.div
         className="absolute top-20 left-10 w-64 h-64 rounded-full bg-[#C9A96E]/5 blur-3xl"
@@ -175,10 +175,10 @@ export default function AboutUsSection() {
         </motion.div>
 
         <motion.p className="text-center max-w-2xl mx-auto mb-8 md:mb-16 text-[#2C3E50]/80" variants={itemVariants}>
-          Founded by Om Prakash Chauhan, Jay Interior is a design studio based in Mira Road East, Mumbai — creating
-          beautiful, livable interiors for homes, offices, and commercial spaces across the city. With over a decade of
-          experience and 300+ completed projects, we believe great design is not a luxury. It is a thoughtful process of
-          listening, planning, and executing — on time, within budget, without compromise.
+          Jay Interior is a design studio built on one belief — that beautiful, livable spaces are not a luxury,
+          they are the result of listening carefully and executing honestly. Founded by Om Prakash Chauhan and based
+          in Mira Road East, we have designed 300+ homes, offices, and commercial spaces across Mumbai over the last
+          decade. On time. Within budget. Without compromise.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
@@ -315,7 +315,7 @@ export default function AboutUsSection() {
               to="/contact"
               className="bg-[#C9A96E] hover:bg-[#C9A96E]/90 text-white px-6 py-3 rounded-lg inline-flex items-center gap-2 font-medium transition-colors"
             >
-              Get Started <ArrowRight className="w-4 h-4" />
+              Book a Free Consultation <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
         </motion.div>

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 // --- Types ---
 export type AnimationPhase = "scatter" | "line" | "circle" | "bottom-strip";
@@ -46,7 +47,7 @@ function FlipCard({ src, index, target }: FlipCardProps) {
             >
                 {/* Front Face */}
                 <div
-                    className="absolute inset-0 h-full w-full overflow-hidden rounded-xl shadow-lg bg-[#F8F8F2]"
+                    className="absolute inset-0 h-full w-full overflow-hidden rounded-xl shadow-lg bg-[#FDF0EE]"
                     style={{ backfaceVisibility: "hidden" }}
                 >
                     <img src={src} alt={`interior-project-${index}`} className="h-full w-full object-cover" />
@@ -158,7 +159,7 @@ export default function IntroAnimation() {
     const taglineOpacity = showTagline ? Math.max(0, 0.6 - morphValue) / 0.6 : 0;
 
     return (
-        <div ref={containerRef} className="relative w-full h-full bg-[#F9F7F4] overflow-hidden">
+        <div ref={containerRef} className="relative w-full h-full bg-[#FDF0EE] overflow-hidden">
             <div className="flex h-full w-full flex-col items-center justify-center">
 
                 {/* Central tagline — visible during circle phase */}
@@ -187,16 +188,47 @@ export default function IntroAnimation() {
                     animate={{ opacity: contentOpacity, y: showContent ? 0 : 16 }}
                     initial={{ opacity: 0, y: 16 }}
                     transition={{ duration: 0.7 }}
-                    className="absolute top-[6%] z-10 flex flex-col items-center justify-center text-center pointer-events-none px-4 w-full"
+                    className="absolute top-[5%] z-10 flex flex-col items-center justify-center text-center pointer-events-none px-4 w-full"
                 >
-                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold text-[#2C3E50] tracking-tight mb-3">
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-[#2C3E50] tracking-tight mb-3">
                         Jay Interior
                     </h2>
-                    <p className="text-sm md:text-base text-[#2C3E50]/70 max-w-md leading-relaxed">
-                        Premium interior design & turnkey projects across Mumbai —
+                    <div className="w-10 h-0.5 bg-[#C9A96E] mx-auto mb-4" />
+                    <p className="text-sm md:text-base text-[#2C3E50]/70 max-w-xs md:max-w-md leading-relaxed mb-6 md:mb-8">
+                        Residential. Commercial. Turnkey.{" "}
                         <br className="hidden md:block" />
-                        transforming homes, offices & commercial spaces since 2014.
+                        Mumbai's trusted interior studio since 2014.
                     </p>
+                    <div className="hidden md:flex items-center gap-10 mb-8">
+                        <div className="text-center">
+                            <p className="text-xl md:text-2xl font-bold text-[#2C3E50]">300+</p>
+                            <p className="text-[10px] md:text-xs text-[#2C3E50]/50 uppercase tracking-widest mt-0.5">Spaces</p>
+                        </div>
+                        <div className="w-px h-8 bg-[#C9A96E]/40" />
+                        <div className="text-center">
+                            <p className="text-xl md:text-2xl font-bold text-[#2C3E50]">10+</p>
+                            <p className="text-[10px] md:text-xs text-[#2C3E50]/50 uppercase tracking-widest mt-0.5">Years</p>
+                        </div>
+                        <div className="w-px h-8 bg-[#C9A96E]/40" />
+                        <div className="text-center">
+                            <p className="text-xl md:text-2xl font-bold text-[#2C3E50]">5</p>
+                            <p className="text-[10px] md:text-xs text-[#2C3E50]/50 uppercase tracking-widest mt-0.5">Zones</p>
+                        </div>
+                    </div>
+                    <div className="flex gap-3 pointer-events-auto">
+                        <Link
+                            to="/contact"
+                            className="inline-flex items-center gap-1.5 bg-[#C9A96E] hover:bg-[#2C3E50] text-white text-xs md:text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
+                        >
+                            Get a Free Quote
+                        </Link>
+                        <Link
+                            to="/projects"
+                            className="inline-flex items-center gap-1.5 border border-[#2C3E50]/25 hover:border-[#C9A96E] text-[#2C3E50] hover:text-[#C9A96E] text-xs md:text-sm font-semibold px-5 py-2.5 rounded-full transition-colors bg-white/60 backdrop-blur-sm"
+                        >
+                            View Projects
+                        </Link>
+                    </div>
                 </motion.div>
 
                 {/* Image cards */}
@@ -228,7 +260,7 @@ export default function IntroAnimation() {
                                 ? containerSize.width * 0.48
                                 : Math.min(containerSize.width, containerSize.height * 1.5) * 1.1;
                             // arcApexY = distance below center for the arc's topmost point
-                            const arcApexY = containerSize.height * (isMobile ? 0.04 : 0.28);
+                            const arcApexY = containerSize.height * (isMobile ? 0.14 : 0.08);
                             const arcCenterY = arcApexY + arcRadius;
                             const spreadAngle = isMobile ? 105 : 125;
                             const startAngle = -90 - spreadAngle / 2;

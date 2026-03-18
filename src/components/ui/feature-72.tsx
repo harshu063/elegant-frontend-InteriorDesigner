@@ -57,17 +57,17 @@ const interiorServices: Feature[] = [
 
 export const Feature72 = ({
   heading = "What We Do",
-  description = "Six core disciplines. One studio. Jay Interior covers everything from modular kitchens to full turnkey projects — so you never have to coordinate between contractors again.",
+  description = "Six disciplines. One team. No juggling between contractors, no coordination gaps — just a single studio that takes your project from blank walls to move-in ready.",
   linkUrl = "/contact",
   linkText = "Book a Free Site Visit",
   features = interiorServices,
 }: Feature72Props) => {
   return (
-    <section className="py-14 md:py-24 bg-[#F9F7F4]">
+    <section className="py-14 md:py-24 bg-[#FDF0EE]">
       <div className="container mx-auto px-4 max-w-6xl flex flex-col gap-14">
         {/* Section header */}
         <div className="max-w-lg">
-          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#C9A96E] block mb-3">What We Do</span>
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#C9A96E] block mb-3">Our Services</span>
           <h2 className="text-3xl md:text-4xl font-semibold text-[#2C3E50] mb-4">{heading}</h2>
           <p className="text-base text-[#2C3E50]/70 leading-relaxed mb-6">{description}</p>
           <Link
