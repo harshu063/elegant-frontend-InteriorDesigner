@@ -1,0 +1,192 @@
+You are given a task to integrate an existing React component in the codebase
+
+The codebase should support:
+- shadcn project structure  
+- Tailwind CSS
+- Typescript
+
+If it doesn't, provide instructions on how to setup project via shadcn CLI, install Tailwind or Typescript.
+
+Determine the default path for components and styles. 
+If default path for components is not /components/ui, provide instructions on why it's important to create this folder
+Copy-paste this component to /components/ui folder:
+```tsx
+feature-72.tsx
+import { ArrowRight } from "lucide-react";
+
+interface Feature {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+}
+
+interface Feature72Props {
+  heading?: string;
+  description?: string;
+  linkUrl?: string;
+  linkText?: string;
+  features?: Feature[];
+}
+
+export const Feature72 = ({
+  heading = "Powerful Features",
+  description = "Discover the powerful features that make our platform stand out from the rest. Built with the latest technology and designed for maximum productivity.",
+  linkUrl = "https://www.shadcnblocks.com",
+  linkText = "Book a demo",
+  features = [
+    {
+      id: "feature-1",
+      title: "Modern Design",
+      description:
+        "Clean and intuitive interface built with the latest design principles. Optimized for the best user experience.",
+      image: "https://www.shadcnblocks.com/images/block/placeholder-1.svg",
+    },
+    {
+      id: "feature-2",
+      title: "Responsive Layout",
+      description:
+        "Fully responsive design that works seamlessly across all devices and screen sizes. Perfect for any platform.",
+      image: "https://www.shadcnblocks.com/images/block/placeholder-2.svg",
+    },
+    {
+      id: "feature-3",
+      title: "Easy Integration",
+      description:
+        "Simple integration process with comprehensive documentation and dedicated support team.",
+      image: "https://www.shadcnblocks.com/images/block/placeholder-3.svg",
+    },
+    {
+      id: "feature-4",
+      title: "Advanced Analytics",
+      description:
+        "Powerful analytics tools to help you understand your users and make data-driven decisions.",
+      image: "https://www.shadcnblocks.com/images/block/placeholder-4.svg",
+    },
+  ],
+}: Feature72Props) => {
+  return (
+    <section className="py-32">
+      <div className="container flex flex-col gap-16 lg:px-16">
+        <div className="lg:max-w-sm">
+          <h2 className="mb-3 text-xl font-semibold md:mb-4 md:text-4xl lg:mb-6">
+            {heading}
+          </h2>
+          <p className="mb-8 text-muted-foreground lg:text-lg">{description}</p>
+          <a
+            href={linkUrl}
+            className="group flex items-center text-xs font-medium md:text-base lg:text-lg"
+          >
+            {linkText}
+            <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
+          </a>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
+          {features.map((feature) => (
+            <div
+              key={feature.id}
+              className="flex flex-col overflow-clip rounded-xl border border-border"
+            >
+              <div>
+                <img
+                  src={feature.image}
+                  alt={feature.title}
+                  className="aspect-[16/9] h-full w-full object-cover object-center"
+                />
+              </div>
+              <div className="px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12">
+                <h3 className="mb-3 text-lg font-semibold md:mb-4 md:text-2xl lg:mb-6">
+                  {feature.title}
+                </h3>
+                <p className="text-muted-foreground lg:text-lg">
+                  {feature.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
+demo.tsx
+import { Feature72 } from "@/components/ui/feature-72";
+
+const DemoOne = () => {
+  return (
+    <Feature72 />
+  );
+};
+
+export { DemoOne };
+
+```
+
+Copy-paste these files for dependencies:
+```tsx
+shadcn/button
+import * as React from "react"
+import { Slot } from "@radix-ui/react-slot"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
+
+const buttonVariants = cva(
+  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        destructive:
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline:
+          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "text-primary underline-offset-4 hover:underline",
+      },
+      size: {
+        default: "h-10 px-4 py-2",
+        sm: "h-9 rounded-md px-3",
+        lg: "h-11 rounded-md px-8",
+        icon: "h-10 w-10",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  },
+)
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean
+}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button"
+    return (
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        {...props}
+      />
+    )
+  },
+)
+Button.displayName = "Button"
+
+export { Button, buttonVariants }
+
+```
+
+Install NPM dependencies:
+```bash
+lucide-react, @radix-ui/react-slot, class-variance-authority
+```
