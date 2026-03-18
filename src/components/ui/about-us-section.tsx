@@ -21,7 +21,7 @@ import {
   Zap,
   TrendingUp,
 } from "lucide-react"
-import { motion, useScroll, useTransform, useInView, useSpring, type Variants, type Easing } from "framer-motion"
+import { motion, useScroll, useTransform, useInView, useSpring, type Variants, type Easing } from "motion/react"
 
 export default function AboutUsSection() {
   const [isVisible, setIsVisible] = useState(false)

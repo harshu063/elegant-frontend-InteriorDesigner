@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Feature72 } from "@/components/ui/feature-72";
-import { Footerdemo } from "@/components/ui/footer-section";
 
 export const metadata: Metadata = {
   title: "Our Services",
@@ -33,7 +32,6 @@ export default function Services() {
         </div>
       </div>
       <Feature72 />
-      <Footerdemo />
     </>
   );
 }

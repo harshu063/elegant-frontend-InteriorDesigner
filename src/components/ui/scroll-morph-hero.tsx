@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useMemo, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -99,6 +99,9 @@ export default function IntroAnimation() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [morphValue, setMorphValue] = useState(0);
   const [parallaxValue, setParallaxValue] = useState(0);
+  const [scatter, setScatter] = useState<
+    Array<{ x: number; y: number; rotation: number; scale: number; opacity: number }>
+  >([]);
 
   // Container size tracking
   useEffect(() => {
@@ -152,13 +155,18 @@ export default function IntroAnimation() {
     return () => el.removeEventListener("mousemove", onMove);
   }, []);
 
-  const scatter = useMemo(() => IMAGES.map(() => ({
-    x: (Math.random() - 0.5) * 1400,
-    y: (Math.random() - 0.5) * 900,
-    rotation: (Math.random() - 0.5) * 180,
-    scale: 0.4,
-    opacity: 0,
-  })), []);
+  // Generate scatter positions client-side only (avoids hydration mismatch)
+  useEffect(() => {
+    setScatter(
+      IMAGES.map(() => ({
+        x: (Math.random() - 0.5) * 1400,
+        y: (Math.random() - 0.5) * 900,
+        rotation: (Math.random() - 0.5) * 180,
+        scale: 0.4,
+        opacity: 0,
+      }))
+    );
+  }, []);
 
   // Content visibility
   const showContent = phase === "bottom-strip" || (phase === "circle" && morphValue > 0.82);
@@ -287,7 +295,7 @@ export default function IntroAnimation() {
             let target = { x: 0, y: 0, rotation: 0, scale: 1, opacity: 1 };
 
             if (phase === "scatter") {
-              target = scatter[i];
+              target = scatter[i] ?? { x: 0, y: 0, rotation: 0, scale: 0, opacity: 0 };
             } else if (phase === "line") {
               const spacing = 70;
               const lineX = i * spacing - (TOTAL_IMAGES * spacing) / 2;

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { projects } from "@/data/projects";
 import { ProjectCard } from "@/components/ui/project-card";
-import { Footerdemo } from "@/components/ui/footer-section";
+
 
 export const metadata: Metadata = {
   title: "Our Projects",
@@ -74,7 +74,6 @@ export default function Projects() {
         </div>
       </section>
 
-      <Footerdemo />
     </>
   );
 }

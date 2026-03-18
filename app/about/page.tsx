@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Footerdemo } from "@/components/ui/footer-section";
+
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -195,7 +195,6 @@ export default function About() {
         </div>
       </section>
 
-      <Footerdemo />
     </>
   );
 }

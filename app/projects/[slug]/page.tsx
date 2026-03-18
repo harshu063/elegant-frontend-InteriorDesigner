@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { getProjectBySlug, getAllSlugs } from "@/data/projects";
 import { ProjectGallery } from "@/components/ui/project-gallery";
 import { WhyChooseUs } from "@/components/ui/why-choose-us";
-import { Footerdemo } from "@/components/ui/footer-section";
+
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -136,7 +136,6 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </section>
 
-      <Footerdemo />
     </>
   );
 }

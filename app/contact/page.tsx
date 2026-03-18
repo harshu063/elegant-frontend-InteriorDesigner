@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { PremiumContact } from "@/components/ui/premium-contact";
-import { Footerdemo } from "@/components/ui/footer-section";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -17,7 +16,6 @@ export default function Contact() {
   return (
     <>
       <PremiumContact />
-      <Footerdemo />
     </>
   );
 }
