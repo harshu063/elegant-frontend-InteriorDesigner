@@ -10,7 +10,11 @@
     "preview": "vite preview"
   },
   "reactSnap": {
-    "source": "dist"
+    "source": "dist",
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.1.7",
