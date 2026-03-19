@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import HeroWrapper from "@/components/ui/hero-wrapper";
+import HeroCarousel from "@/components/ui/hero-carousel";
 import AboutUsSection from "@/components/ui/about-us-section";
 import TestimonialsSection from "@/components/ui/testimonials-section";
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <HeroWrapper />
+      <HeroCarousel />
       <AboutUsSection />
       <TestimonialsSection />
     </>

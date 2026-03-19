@@ -211,20 +211,14 @@ const Navbar1 = () => {
           </div>
 
           {/* About */}
-          <button
-            onClick={() => {
-              const el = document.getElementById("about-section")
-              if (el) {
-                el.scrollIntoView({ behavior: "smooth" })
-              } else {
-                router.push("/")
-                setTimeout(() => document.getElementById("about-section")?.scrollIntoView({ behavior: "smooth" }), 150)
-              }
-            }}
-            className="px-3 py-2 text-sm font-medium text-[#2C3E50]/75 hover:text-[#2C3E50] hover:bg-[#2C3E50]/[0.06] rounded-lg transition-colors"
+          <Link
+            href="/about"
+            className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
+              isActive("/about") ? "text-[#C9A96E] bg-[#C9A96E]/10" : "text-[#2C3E50]/75 hover:text-[#2C3E50] hover:bg-[#2C3E50]/[0.06]"
+            }`}
           >
             About
-          </button>
+          </Link>
 
           {/* Contact */}
           <Link
@@ -362,19 +356,7 @@ const Navbar1 = () => {
                 </AnimatePresence>
               </div>
 
-              <button
-                className="flex items-center w-full text-left px-4 py-3 text-base font-medium text-[#2C3E50] rounded-xl hover:bg-[#2C3E50]/[0.04]"
-                onClick={() => {
-                  setIsOpen(false)
-                  const el = document.getElementById("about-section")
-                  if (el) {
-                    el.scrollIntoView({ behavior: "smooth" })
-                  } else {
-                    router.push("/")
-                    setTimeout(() => document.getElementById("about-section")?.scrollIntoView({ behavior: "smooth" }), 150)
-                  }
-                }}
-              >About</button>
+              <Link href="/about" className="flex items-center px-4 py-3 text-base font-medium text-[#2C3E50] rounded-xl hover:bg-[#2C3E50]/[0.04]" onClick={() => setIsOpen(false)}>About</Link>
               <Link href="/contact" className="flex items-center px-4 py-3 text-base font-medium text-[#2C3E50] rounded-xl hover:bg-[#2C3E50]/[0.04]" onClick={() => setIsOpen(false)}>Contact</Link>
 
               <div className="pt-4">

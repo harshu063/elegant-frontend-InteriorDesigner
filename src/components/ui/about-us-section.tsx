@@ -47,7 +47,7 @@ export default function AboutUsSection() {
   void isVisible
 
   const containerVariants: Variants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 1 },
     visible: {
       opacity: 1,
       transition: {
@@ -58,7 +58,7 @@ export default function AboutUsSection() {
   }
 
   const itemVariants: Variants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 0, opacity: 1 },
     visible: {
       y: 0,
       opacity: 1,
@@ -158,7 +158,7 @@ export default function AboutUsSection() {
         <motion.div className="flex flex-col items-center mb-6" variants={itemVariants}>
           <motion.span
             className="text-xs font-semibold tracking-[0.2em] uppercase text-[#C9A96E] mb-3 flex items-center gap-2"
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
@@ -168,7 +168,7 @@ export default function AboutUsSection() {
           <h2 className="text-3xl md:text-4xl font-semibold text-[#2C3E50] mb-4 text-center">About Jay Interior</h2>
           <motion.div
             className="w-16 h-0.5 bg-[#C9A96E]"
-            initial={{ width: 0 }}
+            initial={{ width: 64 }}
             animate={{ width: 64 }}
             transition={{ duration: 1, delay: 0.5 }}
           ></motion.div>
@@ -203,7 +203,7 @@ export default function AboutUsSection() {
             <motion.div className="relative w-full max-w-xs" variants={itemVariants}>
               <motion.div
                 className="rounded-md overflow-hidden shadow-xl"
-                initial={{ scale: 0.9, opacity: 0 }}
+                initial={{ scale: 1, opacity: 1 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
@@ -215,7 +215,7 @@ export default function AboutUsSection() {
                 />
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-t from-[#2C3E50]/50 to-transparent flex items-end justify-center p-4"
-                  initial={{ opacity: 0 }}
+                  initial={{ opacity: 1 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.9 }}
                 >
@@ -230,21 +230,21 @@ export default function AboutUsSection() {
               </motion.div>
               <motion.div
                 className="absolute inset-0 border-4 border-[#C9A96E]/30 rounded-md -m-3 z-[-1]"
-                initial={{ opacity: 0, scale: 1.1 }}
+                initial={{ opacity: 1, scale: 1 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               ></motion.div>
 
               <motion.div
                 className="absolute -top-4 -right-8 w-16 h-16 rounded-full bg-[#C9A96E]/10"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.9 }}
                 style={{ y: y1 }}
               ></motion.div>
               <motion.div
                 className="absolute -bottom-6 -left-10 w-20 h-20 rounded-full bg-[#C9A96E]/10"
-                initial={{ opacity: 0, y: -20 }}
+                initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 1.1 }}
                 style={{ y: y2 }}
@@ -302,8 +302,8 @@ export default function AboutUsSection() {
 
         <motion.div
           className="mt-8 md:mt-16 bg-[#2C3E50] text-white p-6 md:p-8 rounded-xl flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 text-center md:text-left"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isStatsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={isStatsInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <div className="flex-1">
@@ -344,7 +344,7 @@ function ServiceItem({ icon, secondaryIcon, title, description, variants, delay,
     >
       <motion.div
         className="flex items-center gap-3 mb-3"
-        initial={{ x: direction === "left" ? -20 : 20, opacity: 0 }}
+        initial={{ x: 0, opacity: 1 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: delay + 0.2 }}
       >
@@ -361,7 +361,7 @@ function ServiceItem({ icon, secondaryIcon, title, description, variants, delay,
       </motion.div>
       <motion.p
         className="text-sm text-[#2C3E50]/80 leading-relaxed pl-12"
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: delay + 0.4 }}
       >
@@ -369,8 +369,8 @@ function ServiceItem({ icon, secondaryIcon, title, description, variants, delay,
       </motion.p>
       <motion.div
         className="mt-3 pl-12 flex items-center text-[#C9A96E] text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0 }}
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 1 }}
       >
         <span className="flex items-center gap-1">
           Learn more <ArrowRight className="w-3 h-3" />
@@ -393,7 +393,7 @@ function StatCounter({ icon, value, label, suffix, delay }: StatCounterProps) {
   const isInView = useInView(countRef, { once: false })
   const [hasAnimated, setHasAnimated] = useState(false)
 
-  const springValue = useSpring(0, { stiffness: 50, damping: 10 })
+  const springValue = useSpring(value, { stiffness: 50, damping: 10 })
 
   useEffect(() => {
     if (isInView && !hasAnimated) {
@@ -412,7 +412,7 @@ function StatCounter({ icon, value, label, suffix, delay }: StatCounterProps) {
       className="bg-white/50 backdrop-blur-sm p-4 md:p-6 rounded-xl flex flex-col items-center text-center group hover:bg-white transition-colors duration-300"
       variants={
         {
-          hidden: { opacity: 0, y: 20 },
+          hidden: { opacity: 1, y: 0 },
           visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay } },
         } as Variants
       }

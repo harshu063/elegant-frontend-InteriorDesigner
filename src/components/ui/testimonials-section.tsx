@@ -70,7 +70,7 @@ export default function TestimonialsSection() {
       <div className="container mx-auto px-4 max-w-6xl">
         <motion.div
           className="text-center mb-10 md:mb-16"
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 1, y: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
@@ -95,7 +95,7 @@ export default function TestimonialsSection() {
 
       <motion.div
         className="text-center mt-10 md:mt-14"
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 1 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.7, delay: 0.4 }}
         viewport={{ once: true }}
