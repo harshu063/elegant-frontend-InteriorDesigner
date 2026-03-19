@@ -26,6 +26,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
+      <head>
+        {process.env.NODE_ENV === "production" && (
+          <base href="https://jay-interior.pages.dev/" />
+        )}
+      </head>
       <body className="bg-white text-black">
         {/* FIXED NAVBAR */}
         <Navbar1 />
