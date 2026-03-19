@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   },
   description:
     "Jay Interior delivers residential, commercial, and turnkey interior design services across Mumbai.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
